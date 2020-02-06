@@ -1,6 +1,36 @@
 {% if username != session['username'] %}
 <p>Sorry, seems like something goes wrong. Return to Sign In and try again</p>
 <a href={{ url_for('index') }}> To Sign In</a>
+
 {% else %}
+<a href={{ url_for('logout') }}>Log Out</a>
 <h2>Hello, {{ username|title }}!</h2>
-{% endif %}
+
+
+<ol>
+{% for task in tasks %}
+    <li>{{ task.title }}<a href={{ "/remove/task" + loop.index[string] }}>Remove</a> </li>
+{% endfor %}    
+</ol>
+
+<form method="POST">
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
